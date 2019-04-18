@@ -1,0 +1,16 @@
+<view class='public_num'>
+  <view class='public_num_left'>
+    <block wx:for='{{public_num}}'>
+      <view wx:if='{{index%2==0}}' style='height:{{random[index]}}px;' class='left_item'>
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+  <view class='public_num_right'>
+    <block wx:key='*this' wx:for='{{public_num}}' >
+      <view wx:if='{{index%2!=0}}' style='height:{{random[index]}}px;' class='right_item'>
+        {{item.name}}
+      </view>
+    </block>
+  </view>
+</view>

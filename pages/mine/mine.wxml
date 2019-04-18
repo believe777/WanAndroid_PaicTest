@@ -1,0 +1,14 @@
+
+<view class='mine_view'>
+  <view class='mine_logo_view' bindtap='login'>
+    <image class='header_icon' src='{{user_icon}}' ></image>
+    <text class='header_login_text'>{{user_name}}</text>
+  </view>
+  <block wx:key='*this' wx:for='{{item_data}}'>
+    <view class='mine_item'>
+      <image src='{{item.src}}' class='mine_item_icons'></image>
+      <text class='mine_item_text'>{{item.text}}</text>
+    </view>
+    <view class='base_line'></view>
+  </block>
+</view>

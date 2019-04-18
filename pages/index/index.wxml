@@ -1,0 +1,24 @@
+<view>
+  <block wx:key="home_items" wx:for='{{home_items}}'>
+    <view class='section' style='padding-top:10px;padding-bottom:10px' data-link="{{item.link}}" bindtap='jump'>
+      <!-- 图标 -->
+      <icon class='icon' type='success' size='20'></icon>
+      <view>
+        <text class='item_title' style='margin-bottom:5px;'>{{item.title}}</text>
+        <view class='section_ellipsis'>
+          <text wx:if="{{item.fresh}}" class='new_tag'>新</text>
+          <text wx:if="{{item.collect}}" class='collect_tag'>置顶</text>
+          <text wx:if="{{item.tags.length>0}}" class="chapter_tag">{{item.tags[0].name}}</text>
+          <text class='disc_title'>作者：</text>
+          <text class='disc_content'>{{item.author}}</text>
+          <text class='disc_title'>分类：</text>
+          <text class='disc_content'>{{item.superChapterName}}/{{item.chapterName}}</text>
+          <text class='disc_title'>时间：</text>
+          <text class='disc_content'>{{item.niceDate}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 下划线 -->
+    <view class='base_line'></view>
+  </block>
+</view>

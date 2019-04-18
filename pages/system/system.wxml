@@ -1,0 +1,48 @@
+<!-- 一级分类 -->
+<view class='system_classify' style='position: fixed;top: 0px;'>
+  <text class='system_classify_title'>一级分类：</text>
+  <scroll-view scroll-y='true' style='width:80%'>
+    <view class='system_classify_content' style='height:65px;'>
+      <block wx:key='*this' wx:for='{{system_first_classify}}'>
+        <view class='system_classify_text' style='border:{{first_classify_selected === index ? "solid" : "none"}};border-width: 1px;' bindtap='selectFirstClassify' data-index='{{index}}'>
+          {{item.name}}
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+<!-- 分割线 -->
+<view class='base_line' style='position:fixed;top:85px;'></view>
+<!-- 二级分类 -->
+<view class='system_classify' style='position: fixed;top: 86px;'>
+  <text class='system_classify_title'>二级分类：</text>
+  <scroll-view scroll-y='true' style='width:80%'>
+    <view class='system_classify_content' style='height:32px;'>
+      <block wx:key='*this' wx:for='{{system_second_classify}}'>
+        <view class='system_classify_text' style='border:{{second_classify_selected === index ? "solid" : "none"}};border-width: 1px;' bindtap='selectSecondClassify' data-index='{{index}}'>
+          {{item.name}}
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+<view style='height:138px;background-color:#fff;'></view>
+<view>
+  <block wx:key='*this' wx:for='{{system_arit}}'>
+    <view  class='system_arit' style='padding-top:10px;padding-bottom:10px' data-link="{{item.link}}" bindtap='jump'>
+      <!-- 图标 -->
+      <icon class='icon' type='success' size='20'></icon>
+      <view style='width:100%'>
+        <text class='item_title' style='margin-bottom:5px;'>{{item.title}}</text>
+        <view class='section_ellipsis'>
+          <text class='disc_title'>作者：</text>
+          <text class='disc_content'>{{item.author}}</text>
+          <text class='disc_title'>时间：</text>
+          <text class='disc_content'>{{item.niceDate}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 下划线 -->
+    <view class='base_line'></view>
+  </block>
+</view>

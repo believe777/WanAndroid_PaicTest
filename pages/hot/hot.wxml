@@ -1,0 +1,27 @@
+<view class='hot_view'>
+  <swiper indicator-dots='true' indicator-color='#ffffff' indicator-active-color='#00FF00' autoplay='true' interval='3000'>
+    <block wx:key='*this' wx:for='{{home_banner}}'>
+      <swiper-item>
+        <image src='{{item.imagePath}}' class='image_banner'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 热搜 -->
+  <view class='hot_search_view'>
+    <view style='padding:5px 10px 5px 10px;font-size:16px'>大家都在搜</view>
+    <view class='hot_search_model'>
+      <block wx:key='*this' wx:for='{{hotkey}}'>
+        <text class='hot_search_key_text' style='color:{{hot_text_color[index%7]}};' bindtap='hotSearch' data-name='{{item.name}}'>{{item.name}}</text>
+      </block>
+    </view>
+  </view>
+  <!-- 常用网站 -->
+  <view class='hot_search_view'>
+    <view style='padding:5px 10px 5px 10px;font-size:16px'>常用网站</view>
+    <view class='hot_search_model'>
+      <block wx:key='*this' wx:for='{{hot_friend}}'>
+        <text class='hot_search_key_text' style='color:{{hot_text_color[index%7]}};' bindtap=''>{{item.name}}</text>
+      </block>
+    </view>
+  </view>
+</view>
